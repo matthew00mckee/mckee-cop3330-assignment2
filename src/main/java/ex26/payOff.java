@@ -16,17 +16,9 @@ public class payOff {
         double apr = input.nextDouble() /100;
         System.out.print("What is the monthly payment you can make?");
         double payment = input.nextDouble();
-        int monthsLeft = calculateMonths(balance,apr,payment);
+        int monthsLeft = PaymentCalculator.calculateMonths(balance,apr,payment);
 
         System.out.print("It will take "+monthsLeft+" months to pay off this card.");
-    }
-
-    public static int calculateMonths(double balance, double apr, double payment){
-        double dailyRate = apr/365;
-        double months = (-(1/30.0)*Math.log(1+balance/payment * (1-(Math.pow(1+dailyRate,30))))
-                / Math.log(1+dailyRate));
-        months = Math.ceil(months);
-        return (int) months;
     }
 
 }

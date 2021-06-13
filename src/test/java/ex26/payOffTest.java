@@ -11,9 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class payOffTest {
     @Test
     void calculateMonthsTest(){
-        payOff mc = new payOff();
-
-        int test = mc.calculateMonths(5000,.12,100);
+        int test = PaymentCalculator.calculateMonths(5000,.12,100);
         int expected = 70;
 
         assertEquals(expected, test);
