@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+main-> totalNumber
+Addloop -> addingCalculate: add total number
+Addloop <- addingCalculate: returns new sum to the loop
+Addloop -> main : returns the total to main after exiting loop
+main -> Output : prints out the total after the correct number of loops
+
+
+
+
+
+
+@enduml
