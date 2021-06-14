@@ -29,12 +29,13 @@ public class removeEmployee {
         System.out.print("Enter the name of the employee you wish to have removed: ");
         return input.nextLine();
     }
-    public void removeFiredGuy (ArrayList<String> listEmployee, String firedGuy){
+    public ArrayList removeFiredGuy (ArrayList<String> listEmployee, String firedGuy){
         for (int i=0; i<listEmployee.size();i++){
             if(firedGuy.equals(listEmployee.get(i))){
                 listEmployee.remove(i);
             }
         }
+        return null;
     }
     public void inputEmployees(ArrayList<String> employees){
         employees.add("Conor McGregor");
