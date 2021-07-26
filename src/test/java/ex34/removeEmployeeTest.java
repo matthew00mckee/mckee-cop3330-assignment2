@@ -8,7 +8,6 @@ package ex34;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,7 +22,6 @@ class removeEmployeeTest {
         employees.add("Dana White");
         employees.add("Kamaru Usman");
         ArrayList test = re.removeFiredGuy(employees,"Conor McGregor");
-        employees.remove("Conor McGregor");
         ArrayList expected = employees;
         assertEquals(expected,test);
     }

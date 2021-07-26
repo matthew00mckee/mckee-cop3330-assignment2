@@ -9,8 +9,8 @@ class heartRateTest {
     void testHeartRate(){
         heartRate hr = new heartRate();
 
-        int test = hr.idealHR(22,65,55);
-        int expected = 138;
+        double test = Math.round(hr.idealHR(22,65,55));
+        double expected = 138.0;
 
         assertEquals(expected,test);
     }

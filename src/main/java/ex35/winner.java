@@ -5,33 +5,34 @@
 
 package ex35;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class winner {
-    private static final Scanner input = new Scanner(System.in);
+    private static final Scanner Input = new Scanner(System.in);
     static final Random randomNum = new Random();
-    public static String[] players = new String[100];
+
     public static int playerTotal= 0;
     public static void main (String[] args){
-        listPlayers();
-        randomWinner();
+        ArrayList<String> players = new ArrayList<>();
+        ArrayList<String> listPlayers=listPlayers(players);
+        Printoutput(randomWinner(listPlayers,randomNum.nextInt(playerTotal)));
     }
-    public static void listPlayers(){
-        String comp;
-        for (int i=0; ;i++){
-            System.out.print("Enter a player name");
-            comp = input.nextLine();
-            if(comp.isEmpty()){
-                return;
-            }else {
-                players[i]=comp;
-                playerTotal++;
-            }
-        }
+    public static ArrayList<String> listPlayers(ArrayList<String> players){
+        System.out.print("Enter a player name");
+        String input;
+        do{
+            input= Input.nextLine();
+            playerTotal++;
+        }while(!input.isEmpty());
+        return players;
     }
-    public static void randomWinner (){
-        System.out.printf("Drumroll please\nThe winner is ... %s",
-                players[randomNum.nextInt(playerTotal)]);
+    public static String randomWinner (ArrayList<String>listPlayers, int Winner){
+        String winner = listPlayers.get(Winner);
+        return winner;
+    }
+    public static void Printoutput(String Winner){
+        System.out.print("Drumroll Please!\n And the winner is "+Winner);
     }
 }

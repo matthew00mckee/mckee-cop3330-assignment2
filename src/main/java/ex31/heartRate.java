@@ -28,18 +28,19 @@ public class heartRate {
         return restingHR;
     }
     public static void calculateHeartRate(String ageSTR, String restingSTR){
-        int idealHR = 0;
+        double HR;
         int age = Integer.parseInt(ageSTR);
         int resting = Integer.parseInt(restingSTR);
         System.out.println("Resting Heart Rate: "+resting+"          Age: "+age+"\n");
         System.out.println("Intensity   | Heart Rate \n-----------------------------");
-        for(int i=55;i<=95;i+=5){
-            idealHR=idealHR(age,resting,i);
-            System.out.println(String.format("%d          | %d bpm",i,idealHR));
+        for(double i=55;i<=95;i+=5){
+            HR=Math.round(idealHR(age,resting,i));
+            System.out.print(i+"%          | "+HR+" bpm\n");
         }
     }
-    public static int idealHR (int age, int resting,int intensity){
-        int heartRate = (((220-age)-resting)*intensity)+resting;
+    public static double idealHR (int age, int resting,double intensity){
+        double intense= intensity/100;
+        double heartRate = (((220-age)-resting)*intense)+resting;
         return heartRate;
     }
 }

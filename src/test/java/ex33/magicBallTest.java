@@ -6,20 +6,50 @@
 package ex33;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-
+import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
 class magicBallTest {
 
+
     @Test
-    void testResponses (){
-        magicBall mb= new magicBall();
+    void testResponsesYes (){
 
-        Object test = mb.magic8Ball("Yes");
-        Object expected = Arrays.asList("Yes");
+        magicBall meb = new magicBall();
 
-        assertEquals(expected,test);
+        String expected = "Yes";
+        String actual = meb.randomAnswers(1);
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    void testResponsesNo (){
+
+        magicBall meb = new magicBall();
+
+        String expected = "No";
+        String actual = meb.randomAnswers(2);
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    void testResponsesMaybe (){
+
+        magicBall meb = new magicBall();
+
+        String expected = "Maybe";
+        String actual = meb.randomAnswers(3);
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    void testResponsesLater (){
+
+        magicBall meb = new magicBall();
+
+        String expected = "Ask again later";
+        String actual = meb.randomAnswers(4);
+
+        assertEquals(expected, actual);
     }
 }

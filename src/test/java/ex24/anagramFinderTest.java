@@ -12,17 +12,25 @@ class anagramFinderTest {
 
     @Test
     void anagramtest_is_True(){
-        anagramFinder check = new anagramFinder();
+        anagramTest check = new anagramTest();
 
-        boolean test = check.anagramtest("tone","note");
+        boolean test = check.testForAnagrams("tone","note");
         boolean expected = true;
         assertEquals(test,expected);
     }
     @Test
-    void anagramtest_is_False(){
-        anagramFinder check = new anagramFinder();
+    void anagramtest_Wrong_Length_F(){
+        anagramTest check = new anagramTest();
 
-        boolean test = check.anagramtest("car", "racecar");
+        boolean test = check.lengthTest("car", "racecar");
+        boolean expected = false;
+        assertEquals(test,expected);
+    }
+    @Test
+    void anagramTest_False(){
+        anagramTest check = new anagramTest();
+
+        boolean test = check.testForAnagrams("wood", "door");
         boolean expected = false;
         assertEquals(test,expected);
     }

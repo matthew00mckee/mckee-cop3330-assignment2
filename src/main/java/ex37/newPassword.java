@@ -37,8 +37,7 @@ public class newPassword {
     public static String passwordGenerator(int minCharacters,int specialCount,int numberDigits){
         String passwordNew= "";
         int numLetters = (minCharacters-(specialCount+numberDigits));
-        //creates a password, but annoyingly it doesn't
-        // mix the characters and i don't really know how to fix that.
+
         for (int i = 0; i < numLetters; i++) {
             passwordNew += randomLetter();
         }

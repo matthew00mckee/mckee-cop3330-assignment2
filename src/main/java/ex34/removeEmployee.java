@@ -35,7 +35,7 @@ public class removeEmployee {
                 listEmployee.remove(i);
             }
         }
-        return null;
+        return listEmployee;
     }
     public void inputEmployees(ArrayList<String> employees){
         employees.add("Conor McGregor");

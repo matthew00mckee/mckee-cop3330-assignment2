@@ -5,15 +5,21 @@
 
 package ex32;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class numberGuessTest {
 
     @Test
-    void testRangeEasy (){
-        numberGuess ng =new numberGuess;
-        int test = ng.
-    }
+    void test_Output (){
+        Game tg = new Game();
 
+        String expected = "You got it in 4 guesses!\n\n";
+        String actual =tg.output(4);
+
+        assertEquals(expected, actual);
+    }
 }
